@@ -1,0 +1,20 @@
+<!-- Extend the base template:
+Use {% extends 'notes/base.html' %} to inherit the layout from the base template. -->
+{% extends 'notes/base.html' %}
+
+<!-- Define the title block:
+   a. Start the {% block title %} to set the title of the page.
+   b. Set the title to "Delete Note".
+   c. End the title block with {% endblock %}. -->
+{% block title %}Delete Note{% endblock %}
+
+<!-- Define the content block:
+Start the {% block content %} to insert dynamic content into the content area. -->
+{% block content %}
+    <h1>Are you sure you want to delete this note?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'note_list' %}">Cancel</a>
+{% endblock %}

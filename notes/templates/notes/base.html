@@ -1,0 +1,61 @@
+<!-- 1. Define the HTML document type:
+   a. Use <!DOCTYPE html> to declare the document type as HTML5.
+2. Open the HTML tag:
+   a. Start the <html> tag.
+3. Open the head section:
+   a. Start the <head> tag. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 4. Load static files:
+   a. Use {% load static %} to enable loading of static files. -->
+    {% load static %}
+    <!-- 5. Set the title of the page:
+   a. Use <title> tag with a Django template block {% block title %} to allow dynamic title setting.
+   b. Default title is "Sticky Notes". -->
+    <title>{% block title %}Sticky Notes{% endblock %}</title>
+    <!-- 6. Link to the stylesheet:
+   a. Use <link> tag with rel="stylesheet" and type="text/css".
+   b. Use href attribute with {% static 'notes/styles.css' %} to link to the CSS file. -->
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/styles.css' %}">
+<!-- 7. Close the head section:
+    a. End the <head> tag. -->
+</head>
+<!-- 8. Open the body section:
+   a. Start the <body> tag. -->
+<body>
+    <header>
+        <!-- 9. Add the main heading:
+    a. Use <h1> tag with the text "Sticky Notes". -->
+        <h1>Sticky Notes</h1>
+        <nav>
+            <!-- 10. Create the navigation menu:
+                    a. Start the <nav> tag.
+                    b. Add a link to the home page using <a> tag with {% url 'note_list' %}.
+                    c. Add a link to create a new note using <a> tag with {% url 'note_create' %}.
+                    d. End the <nav> tag. -->
+            <a href="{% url 'note_list' %}">Home</a>
+            <a href="{% url 'note_create' %}">Create Note</a>
+        </nav>
+    </header>
+    <!-- Create the container for content:
+            a. Start a <div> tag with class="container". -->
+    <div class="container">
+        <!-- Define a block for dynamic content:
+            Use {% block content %} to allow dynamic content insertion.
+            End the content block with {% endblock %}. -->
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <!-- Create the footer section:
+            Start the <footer> tag.
+            Add a paragraph <p> tag with the text "&copy; 2023 Sticky Notes App".
+            End the <footer> tag. -->
+        <p>&copy; 2023 Sticky Notes App</p>
+    </footer>
+<!-- Close the body section: End the <body> tag. -->
+</body>
+<!-- Close the HTML tag: End the <html> tag. -->
+</html>

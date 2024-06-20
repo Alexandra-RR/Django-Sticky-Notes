@@ -1,0 +1,143 @@
+/* 1. Set the body style:
+   a. Use 'Comic Sans MS' font, with cursive and sans-serif as fallbacks.
+   b. Set background color to light blue (#f0f8ff).
+   c. Remove default margin and padding. */
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Style the header:
+   a. Set background color to yellow (#ffcc00).
+   b. Add padding of 10 pixels.
+   c. Center-align the text. */
+
+header {
+    background-color: #ffcc00;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 3. Style header's h1 element:
+   a. Remove default margin.
+   b. Set font size to 3em.
+   c. Set text color to dark gray (#333). */
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #333;
+}
+
+/* 4. Style navigation links:
+   a. Set text color to dark gray (#333).
+   b. Remove text decoration (no underline).
+   c. Set margin to 0 and 15 pixels on left and right.
+   d. Set font size to 1.2em.
+   e. On hover, change text color to orange (#ff5733). */
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+/* 5. Style all h1 elements:
+   a. Set text color to orange (#ff5733). */
+
+nav a:hover {
+    color: #ff5733;
+}
+
+/* 6. Style the container:
+   a. Set max-width to 800 pixels.
+   b. Center the container with auto margins.
+   c. Add 20 pixels margin on top and bottom.
+   d. Add 20 pixels padding.
+   e. Set background color to white (#ffffff).
+   f. Add a box shadow with 10 pixels blur, slightly dark gray color. */
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff5733;
+}
+
+/* 7. Style unordered lists (ul):
+   a. Remove default list style.
+   b. Remove default padding. */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* 8. Style list items (ul li):
+   a. Set margin to 10 pixels on top and bottom. */
+
+ul li {
+    margin: 10px 0;
+}
+
+/* 9. Style all anchor links (a):
+   a. Set text color to blue (#007bff).
+   b. Remove text decoration (no underline).
+   c. On hover, underline the text. */
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 10. Style buttons:
+    a. Set background color to orange (#ff5733).
+    b. Set text color to white.
+    c. Remove border.
+    d. Add padding of 10 pixels top and bottom, 20 pixels left and right.
+    e. Change cursor to pointer.
+    f. Set font size to 1em.
+    g. On hover, change background color to dark orange (#ff4500). */
+
+button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+/* 11. Style the footer:
+    a. Center-align the text.
+    b. Add padding of 10 pixels.
+    c. Set background color to yellow (#ffcc00).
+    d. Fix position to the bottom of the viewport.
+    e. Set width to 100%.
+    f. Fix position at the bottom. */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffcc00;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

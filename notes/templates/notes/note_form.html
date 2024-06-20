@@ -1,0 +1,29 @@
+{% extends 'notes/base.html' %}
+
+<!-- Define the title block:
+   a. Start the {% block title %} to set the title of the page.
+   b. Set the title to "New Note".
+   c. End the title block with {% endblock %}. -->
+{% block title %}New Note{% endblock %}
+
+<!-- Add a heading for the form:
+   a. Use <h1> tag.
+   b. Check if the form instance has a primary key (form.instance.pk).
+   c. If it has a primary key, set the heading to "Edit Note".
+   d. If it does not have a primary key, set the heading to "New Note".
+   e. Close the <h1> tag. -->
+{% block content %}
+    <h1>{% if form.instance.pk %}Edit Note{% else %}New Note{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- Add a submit button:
+            a. Use <button> tag with type="submit".
+            b. Check if the form instance has a primary key (form.instance.pk).
+            c. If it has a primary key, set the button text to "Update".
+            d. If it does not have a primary key, set the button text to "Create".
+            e. Close the <button> tag. -->
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <a href="{% url 'note_list' %}">Back to all notes</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!-- Extend the base template:
+Use {% extends 'notes/base.html' %} to inherit the layout from the base template. -->
+{% extends 'notes/base.html' %}
+
+{% block title %}{{ note.title }}{% endblock %}
+
+<!-- Define the title block:
+   a. Start the {% block title %} to set the title of the page.
+   b. Insert the note's title using {{ note.title }}.
+   c. End the title block with {% endblock %}. -->
+{% block content %}
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.content }}</p>
+    <p>Created: {{ note.created_at }}</p>
+    <p>Last updated: {{ note.updated_at }}</p>
+    <a href="{% url 'note_update' note.pk %}">Edit</a>
+    <form method="post" action="{% url 'note_delete' note.pk %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'note_list' %}">Back to all notes</a>
+{% endblock %}
+
